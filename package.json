@@ -1,0 +1,16 @@
+{
+  "name": "progetto-html-e-css-di-mirela-rosca",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "sass src/styles.scss dist/styles.css --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "sass": "^1.83.0"
+  }
+}

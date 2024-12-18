@@ -1,0 +1,302 @@
+/* Global reset and box-sizing */
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Root variables for colors */
+:root {
+  --primary-color: rgb(250, 248, 245);
+  --secondary-color: rgb(0, 0, 0);
+  --tertiary-color: rgb(143, 183, 206);
+  --quinary-color: rgb(232, 16, 110);
+}
+
+/* Body styling */
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--primary-color) !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  @media (max-width: 992px) {
+    height: auto;
+  }
+}
+
+img{
+  user-select: none;
+  pointer-events: none;
+}
+
+/* Navbar adjustments */
+.navbar-toggler {
+  &:focus {
+    --bs-navbar-toggler-focus-width: 0 !important;
+  }
+}
+
+.nav-item {
+  img {
+    width: 600px;
+  }
+}
+
+/* Container styling */
+.container {
+  width: 90%;
+  max-width: 1400px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+
+  @media (max-width: 992px) {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* Profile section */
+.profile {
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  flex: 1;
+  max-width: 350px;
+
+  .profile-image {
+    position: relative;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+
+    .arrow {
+      position: absolute;
+      width: 90px;
+      height: auto;
+      bottom: -40px;
+      left: -50px;
+      transform: rotate(-25deg);
+    }
+  }
+
+  h1 {
+    font-family: "Cedarville Cursive", cursive;
+    font-size: 32px;
+  }
+
+  .location,
+  .age {
+    font-size: 14px;
+    color: gray;
+
+    &.age {
+      color: #333;
+    }
+  }
+}
+
+/* Quote styling */
+#quote {
+  margin: 1rem;
+  position: relative;
+  font-size: 1rem;
+
+  span {
+    position: relative;
+    z-index: 2;
+  }
+
+  img {
+    position: absolute;
+    width: 270px;
+    height: auto;
+    left: 10px;
+    bottom: -65px;
+    opacity: 0.8;
+    z-index: 1;
+  }
+}
+
+/* CV download link */
+.cv-download {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  color: black;
+  padding: 30px;
+
+  .decoration.circle {
+    position: absolute;
+    width: 200px;
+    height: auto;
+    bottom: -10px;
+    left: -10px;
+    transform: rotate(5deg);
+  }
+}
+
+/* Social icons */
+.social-icons {
+  margin-top: 20px;
+
+  a {
+    text-decoration: none;
+    font-size: 20px;
+    margin: 0 10px;
+  }
+
+  svg {
+    width: 32px;
+  }
+}
+
+/* Boxes section */
+.boxes {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  flex: 2;
+  width: 60%;
+  margin-top: 40px;
+  position: relative;
+
+  h2,
+  img {
+    position: absolute;
+  }
+
+  h2 {
+    font-family: "Cedarville Cursive", cursive;
+    font-size: 28px;
+    top: -70px;
+    left: -40px;
+    transform: rotate(-5deg);
+  }
+
+  img {
+    width: 50px;
+    height: auto;
+    top: -30px;
+    left: -60px;
+  }
+
+  @media (max-width: 992px) {
+    grid-template-columns: 1fr;
+    width: 100%;
+    margin-top: 80px;
+
+    h2 {
+      top: -80px;
+      left: 40px;
+      transform: rotate(-5deg);
+    }
+
+    img {
+      top: -40px;
+      left: 0;
+      transform: rotate(25deg);
+    }
+  }
+}
+
+/* Box styling */
+.box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  min-height: 200px;
+  width: 100%;
+
+  &:nth-child(7) {
+    background-color: var(--primary-color);
+    flex-direction: row;
+    justify-content: center;
+    gap: 1rem;
+    grid-column: 1 / span 2;
+    justify-self: center;
+    width: fit-content;
+    min-height: unset;
+    height: fit-content;
+
+    @media (max-width: 992px) {
+      grid-column: auto;
+      width: 100%;
+    }
+  }
+}
+
+/* Links styling */
+.cv-link,
+.contact-link {
+  background-color: var(--tertiary-color);
+  width: fit-content;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  padding: 10px 15px;
+  border-radius: 5px;
+}
+
+/* Project design inside each box */
+.project-info {
+  text-align: left;
+
+  p:first-child {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    font-size: 1rem;
+
+    span {
+      color: var(--quinary-color);
+      font-weight: 500;
+      text-transform: capitalize;
+    }
+  }
+}
+
+.project-link {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  width: 100%;
+  gap: 10px;
+
+  a {
+    color: black;
+    text-decoration: none;
+    text-transform: capitalize;
+    font-size: 14px;
+    border-bottom: 2px solid var(--quinary-color);
+  }
+
+  span {
+    font-size: 14px;
+    text-transform: capitalize;
+  }
+}

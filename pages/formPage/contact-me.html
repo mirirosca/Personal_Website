@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contattami - Mirela Rosca</title>
+
+    <meta property="og:title" content="Mirela Rosca - Contattami!" />
+    <meta property="og:description" content="Benvenuto sul mio sito personale, sono un'appassionata Front End Developer. Contattami compilando questo modulo !!" />
+    <meta property="og:image" src="../../immagini/foto personale.jpeg" />
+    <meta property="og:url" content="" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="it_IT" />
+    <link rel="icon" href="../../immagini/foto personale.jpeg" type="image">
+
+    <link rel="stylesheet" href="../homePage/style.css">
+    <link rel="stylesheet" href="contact-me.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap" rel="stylesheet">
+
+
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+        (function(){
+            emailjs.init({
+                publicKey: "5Uy5ZeL4q2CgPxv3e",
+            });
+        })();
+    </script>
+    <script src="script.js"></script>
+</head>
+<body>
+
+    <div class="container">
+        <a href="../homePage/index.html" class="home-button">torna indietro</a>
+        <div class="profile">
+            <div class="profile-image">
+                <img src="../../immagini/foto personale.jpeg" alt="foto personale Mirela Rosca">
+            </div>
+            <h1>contattami</h1>
+            <p>Compila il modulo qui sotto per inviarmi un messaggio</p>
+            <br>
+            <p>puoi scaricare il mio cv
+                <br><br>
+                <a href="../../assets/Mirela Rosca CV.pdf" download="CV_Mirela_Rosca.pdf">
+                    cliccando qua
+                </a>
+            </p>
+        </div>
+
+        <div class="contact-form">
+            <form id="contact-form">
+                <div class="form-group">
+                    <label for="name">Nome</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Messaggio</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                
+                <button type="submit" onclick="sendMail(event)">Invia messaggio</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
